@@ -32,11 +32,14 @@ frequency_mapping = {
 'Annually': 365,
 'Every 3 Months': 90
 }
-df['purchase_frequency_days'] = df['purchase_frequency'].map(frequency_mapping)
-df[['purchase_frequency', 'purchase_frequency_days']].head(10)
+df['purchase_frequency_days'] = df['frequency_of_purchases'].map(frequency_mapping)
 
-df[['discount_applied', 'purchase_amount']].head(10)
+print(df[['frequency_of_purchases', 'purchase_frequency_days']].head(10))
+
+print(df[['discount_applied', 'purchase_amount']].head(10))
 
 (df['discount_applied'] == df['promo_code_used']).all()
 
 df = df.drop('promo_code_used', axis=1)
+
+print(df.head())
