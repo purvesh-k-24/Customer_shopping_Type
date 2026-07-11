@@ -42,4 +42,4 @@ print(df[['discount_applied', 'purchase_amount']].head(10))
 
 df = df.drop('promo_code_used', axis=1)
 
-print(df.head())
+print (df.head())
